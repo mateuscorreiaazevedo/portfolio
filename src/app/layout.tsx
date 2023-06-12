@@ -1,6 +1,6 @@
 import { Roboto_Flex as Roboto, Bai_Jamjuree as BaiJamjuree } from 'next/font/google'
 import '../assets/styles/globals.css'
-import { Header, Sidebar } from '@/components'
+import { Header, OrbitalSphere, Sidebar } from '@/components'
 
 const roboto = Roboto({
   subsets: ['latin'],
@@ -35,6 +35,7 @@ export default function RootLayout ({ children }: { children: React.ReactNode })
       >
         <Header />
         <main className="flex items-center">
+          <OrbitalSphere />
           <article className="flex-1 snap-start snap-mandatory">{children}</article>
           <Sidebar />
         </main>

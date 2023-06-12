@@ -1,3 +1,24 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@keyframes section1 {
+  from {
+    transform: translateX(-50%);
+    opacity: 0;
+  } to {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}
+@keyframes scale {
+  from {
+    scale: 0;
+  } to {
+    scale: 1;
+  }
+}
+
+.animate-section-1 {
+  animation: section1 1.5s ease;
+}
