@@ -1,11 +1,11 @@
 'use client'
 
-import { motion } from 'framer-motion'
-// import { contactService } from '../service/contact-service'
-import { SubmitHandler, useForm } from 'react-hook-form'
 import { containerSlideUp, itemSlideUp } from '@/main/animations'
+import { contactService } from '../service/contact-service'
+import { SubmitHandler, useForm } from 'react-hook-form'
 import { setNotification } from '@/modules/core'
 import { useRouter } from 'next/navigation'
+import { motion } from 'framer-motion'
 
 type Inputs = {
   name: string
