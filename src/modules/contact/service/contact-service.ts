@@ -19,15 +19,13 @@ class ContactService {
   }
 
   async getAllMessages () {
-    const response = await service.request<{ contacts: ContactInfo[]; error?: string}>({
+    const response = await service.request<{ messages: Message[]; error?: string}>({
       url: '/messages',
     })
 
     switch (response.statusCode) {
       case 200:
-        return response.body.contacts
-      case 500:
-        throw new Error(response.body.error)
+        return response.body.messages
       default:
         throw new Error('Erro no servidor. Por favor tente novamente mais tarde.')
     }

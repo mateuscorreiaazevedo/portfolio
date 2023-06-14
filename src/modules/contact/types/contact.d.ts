@@ -5,7 +5,7 @@ interface ContactForm {
   message: string
 }
 
-interface ContactInfo {
+interface Message {
   name: string
   id: string
   email: string

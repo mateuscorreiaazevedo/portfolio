@@ -26,3 +26,7 @@
 .animate-section-2 {
   animation: scale 1.5s ease;
 }
+
+.animate-time-4000 {
+  animation-duration: 4000ms;
+}
