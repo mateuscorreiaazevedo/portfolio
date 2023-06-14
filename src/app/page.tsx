@@ -1,6 +1,6 @@
 'use client'
 
-import { Home } from '@/components'
+import { Contact, Home } from '@/components'
 import { useSearchParams } from 'next/navigation'
 import React from 'react'
 
@@ -11,6 +11,7 @@ export default function Page () {
   return (
     <>
       {tab === null && <Home />}
+      {tab === 'contact' && <Contact />}
     </>
   )
 }

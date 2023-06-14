@@ -3,7 +3,7 @@ import React from 'react'
 type Props = {
   children: React.ReactNode
   col?: boolean
-  animation?: 'section-1' | 'seciont-2' | 'section-3'
+  animation?: 'section-1' | 'section-2' | 'section-3'
 }
 
 export default function Section ({ children, col, animation }: Props) {
@@ -13,7 +13,7 @@ export default function Section ({ children, col, animation }: Props) {
     case 'section-1':
       animate = 'animate-section-1'
       break
-    case 'seciont-2':
+    case 'section-2':
       animate = 'animate-section-2'
       break
     case 'section-3':
