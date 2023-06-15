@@ -2,11 +2,12 @@
 
 import { FormProvider, SubmitHandler, useForm } from 'react-hook-form'
 import { containerSlideUp, itemSlideUp } from '@/main/animations'
-import { contactService } from '../service/contact-service'
 import { Input, PrimaryButton, Textarea } from '@/main/ui'
 import { setNotification } from '@/modules/core'
 import { useRouter } from 'next/navigation'
 import { motion } from 'framer-motion'
+import emailjs from '@emailjs/browser'
+import { env } from '@/main/config'
 
 type Inputs = {
   name: string
@@ -19,12 +20,20 @@ export const FormContact = () => {
   const router = useRouter()
   const methods = useForm<Inputs>()
 
-  const { formState: { errors } } = methods
+  const {
+    formState: { errors }
+  } = methods
 
   const onSubmit: SubmitHandler<Inputs> = async formData => {
+    const templateParams = {
+      from_name: formData.name,
+      message: formData.message,
+      email: formData.email,
+      reply_to: formData.subject
+    }
     try {
-      const message = await contactService.sendMessage(formData)
-      setNotification(message, 'success')
+      await emailjs.send(env.serviceId, env.templateId, templateParams, env.emailjsPublicKey)
+      setNotification('Sua mensagem foi enviada com sucesso! Por favor, aguarde o nosso retorno.', 'success')
       methods.reset()
       router.push('/')
     } catch (error) {
@@ -57,8 +66,10 @@ export const FormContact = () => {
         <motion.div variants={itemSlideUp}>
           <Textarea field="message" placeholder="Message" />
         </motion.div>
-        <motion.div className='-mt-1.5' variants={itemSlideUp}>
-          <PrimaryButton errors={allErrors} type="submit">Submit</PrimaryButton>
+        <motion.div className="-mt-1.5" variants={itemSlideUp}>
+          <PrimaryButton errors={allErrors} type="submit">
+            Submit
+          </PrimaryButton>
         </motion.div>
       </motion.form>
     </FormProvider>
