@@ -3,6 +3,7 @@ import '../assets/styles/globals.css'
 import { Footer, Header, OrbitalSphere, Sidebar } from '@/components'
 import { Toaster } from 'react-hot-toast'
 import { cookies } from 'next/headers'
+import { SignOutButton } from '@/modules/auth'
 
 const roboto = Roboto({
   subsets: ['latin'],
@@ -38,6 +39,7 @@ export default function RootLayout ({ children }: { children: React.ReactNode })
         `}
       >
         <Header />
+        {isAuth && <SignOutButton />}
         <main className="flex items-center">
           <OrbitalSphere />
           <article className="flex-1 snap-start snap-mandatory">{children}</article>
