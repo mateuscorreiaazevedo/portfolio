@@ -45,7 +45,7 @@ export default function RootLayout ({ children }: { children: React.ReactNode })
           <article className="flex-1 snap-start snap-mandatory">{children}</article>
           <Sidebar />
         </main>
-        <Footer isAuth={isAuth} />
+        <Footer />
         <Toaster toastOptions={{
           position: 'top-center',
           className: 'px-4 py-2 font-alt text-sm',

@@ -13,11 +13,7 @@ const nav = [
   {
     link: '/admin/project',
     label: 'Adicionar Projeto'
-  },
-  {
-    link: '/admin/contacts',
-    label: 'Mensagens'
-  },
+  }
 ]
 
 export default function Admin () {

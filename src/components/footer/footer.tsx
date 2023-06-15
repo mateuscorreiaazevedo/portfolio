@@ -1,10 +1,7 @@
-import { PushToAdmin } from './push-to-admin'
+import Image from 'next/image'
+import { images } from '@/assets/images'
 
-type Props = {
-  isAuth: boolean
-}
-
-export default function Footer ({ isAuth }: Props) {
+export default function Footer () {
   return (
     <footer className="px-20 fixed bottom-0 h-24 w-full flex justify-between items-center z-20">
       <p className="text-xs md:text-base text-center truncate">
@@ -18,7 +15,12 @@ export default function Footer ({ isAuth }: Props) {
       </p>
       <div className="flex items-center gap-3 text-lg">
         <p className="font-alt hidden md:block">Powered by</p>
-        <PushToAdmin isAuth={isAuth}/>
+        <Image
+          title="Mateus Correia Azevedo"
+          src={images.brand}
+          className="w-10 aspect-auto object-contain"
+          alt="@mateuscorreiaazevedo"
+        />
       </div>
     </footer>
   )
