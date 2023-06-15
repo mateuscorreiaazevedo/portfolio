@@ -7,6 +7,7 @@ import { setNotification } from '@/modules/core'
 import { useRouter } from 'next/navigation'
 import { authService } from '@/modules/auth'
 import { Spinner } from '@/components'
+import Link from 'next/link'
 
 export default function Login () {
   const [loading, setLoading] = React.useState(false)
@@ -37,6 +38,9 @@ export default function Login () {
   return (
     <FormProvider {...methods}>
       <Section col>
+        <Link href='/' className='font-alt bg-zinc-800 px-4 py-2 mb-4 rounded-full hover:bg-zinc-950 transition-colors'>
+          Ir para Home
+        </Link>
         <form
           onSubmit={methods.handleSubmit(handleLogin)}
           className="w-full px-8 py-4 max-w-xl space-y-2 bg-zinc-800/60 rounded-lg h-fit border border-zinc-600/60 backdrop-blur-sm"
