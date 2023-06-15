@@ -11,7 +11,7 @@ type Props = {
 
 export const Item = (props: Props) => {
   const params = useSearchParams()
-  const tab = useSetQueryString('tab', props.value as string, params)
+  const tab = useSetQueryString('tab', props.value as string)
   const { push } = useRouter()
   const [activeTab, setActiveTab] = useState<string | null>(() => {
     if (params?.has('tab')) {

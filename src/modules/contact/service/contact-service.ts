@@ -1,3 +1,4 @@
+import { prismaDb } from '@/main/config'
 import { service } from '@/modules/core'
 
 class ContactService {
@@ -18,17 +19,25 @@ class ContactService {
     }
   }
 
-  async getAllMessages () {
-    const response = await service.request<{ messages: Message[]; error?: string}>({
-      url: '/messages',
+  async getAllMessages (isAuth: boolean) {
+    if (!isAuth) {
+      return null
+    }
+
+    const contacts = await prismaDb?.contact.findMany({
+      orderBy: { createdAt: 'asc' }
     })
 
-    switch (response.statusCode) {
-      case 200:
-        return response.body.messages
-      default:
-        throw new Error('Erro no servidor. Por favor tente novamente mais tarde.')
+    if (contacts?.length === 0) {
+      return null
     }
+
+    const messages: Message[] | undefined = contacts?.map(contact => ({
+      ...contact,
+      createdAt: contact.createdAt.toISOString()
+    }))
+
+    return messages
   }
 
   async deleteMessageById (id: string) {

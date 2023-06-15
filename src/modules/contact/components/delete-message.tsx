@@ -24,6 +24,7 @@ export const DeleteMessage = ({ id }: Props) => {
 
   return (
     <button
+      title='Deletar mensagem'
       onClick={deleteMessage}
       className="w-20 h-10 flex items-center justify-center bg-zinc-800/60 hover:bg-red-500/60 transition-colors active:bg-red-800/60"
     >
