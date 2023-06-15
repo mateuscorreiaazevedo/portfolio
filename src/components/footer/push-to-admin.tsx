@@ -5,14 +5,14 @@ import { images } from '@/assets/images'
 import Image from 'next/image'
 
 type Props = {
-  user: null
+  isAuth: boolean
 }
 
-export const PushToAdmin = ({ user }: Props) => {
+export const PushToAdmin = ({ isAuth }: Props) => {
   const router = useRouter()
 
   return (
-    <div onClick={() => router.push(user ? '/admin' : '/admin/login')}>
+    <div onClick={() => router.push(isAuth ? '/admin' : '/auth/login')}>
       <Image
           title="Mateus Correia Azevedo"
           src={images.brand}

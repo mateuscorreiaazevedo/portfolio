@@ -2,6 +2,8 @@ import { Roboto_Flex as Roboto, Bai_Jamjuree as BaiJamjuree } from 'next/font/go
 import '../assets/styles/globals.css'
 import { Footer, Header, OrbitalSphere, Sidebar } from '@/components'
 import { Toaster } from 'react-hot-toast'
+import { cookies } from 'next/headers'
+import { SignOutButton } from '@/modules/auth'
 
 const roboto = Roboto({
   subsets: ['latin'],
@@ -21,6 +23,8 @@ export const metadata = {
 }
 
 export default function RootLayout ({ children }: { children: React.ReactNode }) {
+  const isAuth = cookies().has('auth_token')
+
   return (
     <html lang="pt-br">
       <body
@@ -35,12 +39,13 @@ export default function RootLayout ({ children }: { children: React.ReactNode })
         `}
       >
         <Header />
+        {isAuth && <SignOutButton />}
         <main className="flex items-center">
           <OrbitalSphere />
           <article className="flex-1 snap-start snap-mandatory">{children}</article>
           <Sidebar />
         </main>
-        <Footer />
+        <Footer isAuth={isAuth} />
         <Toaster toastOptions={{
           position: 'top-center',
           className: 'px-4 py-2 font-alt text-sm',

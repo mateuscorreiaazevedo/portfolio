@@ -1,6 +1,10 @@
 import { PushToAdmin } from './push-to-admin'
 
-export default function Footer () {
+type Props = {
+  isAuth: boolean
+}
+
+export default function Footer ({ isAuth }: Props) {
   return (
     <footer className="px-20 fixed bottom-0 h-24 w-full flex justify-between items-center z-20">
       <p className="text-xs md:text-base text-center truncate">
@@ -14,7 +18,7 @@ export default function Footer () {
       </p>
       <div className="flex items-center gap-3 text-lg">
         <p className="font-alt hidden md:block">Powered by</p>
-        <PushToAdmin user={null}/>
+        <PushToAdmin isAuth={isAuth}/>
       </div>
     </footer>
   )
