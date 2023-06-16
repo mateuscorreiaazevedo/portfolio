@@ -1,6 +1,5 @@
 {
   "window.zoomLevel": 0,
-  "prettier.configPath": "./.prettierrc",
   "editor.inlineSuggest.enabled": true,
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true
@@ -8,9 +7,9 @@
   "search.showLineNumbers": false,
   "workbench.editor.enablePreview": false,
   "workbench.list.openMode": "doubleClick",
-	"editor.defaultFormatter": "esbenp.prettier-vscode",
   "git.ignoreLimitWarning": true,
   "[prisma]": {
+    "editor.formatOnSave": true,
     "editor.defaultFormatter": "Prisma.prisma"
   }
 }
