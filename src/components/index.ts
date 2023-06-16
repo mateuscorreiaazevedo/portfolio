@@ -8,4 +8,5 @@ export const Header = lazy(() => import('./navbar/header'))
 export const Footer = lazy(() => import('./footer/footer'))
 
 export const Contact = lazy(() => import('./contact/contact'))
+export const MainPage = lazy(() => import('./main/main-page'))
 export const Home = lazy(() => import('./home/home'))

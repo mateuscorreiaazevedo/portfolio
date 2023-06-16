@@ -1,3 +1,4 @@
+import { prismaDb } from '@/main/config'
 import { service, tokenHelper } from '@/modules/core'
 
 const authToken = tokenHelper.get()
@@ -23,6 +24,17 @@ class SkillService {
       default:
         throw new Error('Erro inesperado. Por favor, tente novamente mais tarde.')
     }
+  }
+
+  async getAllSkills (): Promise<Skill[] | undefined> {
+    const data = await prismaDb?.skill.findMany({ orderBy: { level: 'asc' } })
+
+    const skills = data?.map(item => ({
+      ...item,
+      createdAt: item.createdAt.toISOString()
+    })) as Skill[] | undefined
+
+    return skills
   }
 }
 

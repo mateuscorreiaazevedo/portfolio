@@ -1,17 +1,17 @@
-'use client'
-
-import { Contact, Home } from '@/components'
-import { useSearchParams } from 'next/navigation'
+import { MainPage } from '@/components'
+import { skillService } from '@/modules/skills'
 import React from 'react'
 
-export default function Page () {
-  const params = useSearchParams()
-  const tab = params?.get('tab')
+export default async function Home () {
+  let skills: Skill[] | undefined
+
+  try {
+    skills = await skillService.getAllSkills()
+  } catch (error) {
+    console.error((error as any).message)
+  }
 
   return (
-    <>
-      {tab === null && <Home />}
-      {tab === 'contact' && <Contact />}
-    </>
+    <MainPage skills={skills} />
   )
 }
