@@ -36,6 +36,7 @@ export default function RootLayout ({ children }: { children: React.ReactNode })
           min-h-screen
           bg-zinc-900
           text-white
+          scrollbar-none
         `}
       >
         <Header />

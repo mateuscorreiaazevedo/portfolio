@@ -22,7 +22,7 @@ const navbar = [
 
 export default function Header () {
   return (
-    <header className="md:hidden flex p-4 fixed top-0 w-full h-20 z-10">
+    <header className="lg:hidden flex p-4 fixed top-0 w-full h-20 z-10 bg-zinc-900">
       <nav className="flex-1 flex justify-center items-center gap-4">
         {navbar.map(item => (
           <Item {...item} key={item.label} />

@@ -2,12 +2,12 @@
 
 import { FormProvider, SubmitHandler, useForm } from 'react-hook-form'
 import { Input, PrimaryButton, Section } from '@/main/ui'
-import React from 'react'
 import { setNotification } from '@/modules/core'
-import { useRouter } from 'next/navigation'
 import { authService } from '@/modules/auth'
+import { useRouter } from 'next/navigation'
 import { Spinner } from '@/components'
 import Link from 'next/link'
+import React from 'react'
 
 export default function Login () {
   const [loading, setLoading] = React.useState(false)
@@ -25,6 +25,7 @@ export default function Login () {
       const message = await authService.login(formLogin)
       setNotification(message!, 'success')
       router.push('/admin')
+      router.refresh()
     } catch (error) {
       setNotification((error as any).message)
       methods.resetField('password')

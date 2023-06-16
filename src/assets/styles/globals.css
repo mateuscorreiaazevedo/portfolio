@@ -20,11 +20,23 @@
   }
 }
 
+@keyframes section3 {
+  from {
+    transform: translateY(100%);
+  } to {
+    transform: translateY(0);
+  }
+}
+
 .animate-section-1 {
   animation: section1 1.5s ease;
 }
 .animate-section-2 {
   animation: scale 1.5s ease;
+}
+.animate-section-3 {
+  animation-delay: 4000ms;
+  animation: section3 1.5s ease;
 }
 
 .animate-time-4000 {

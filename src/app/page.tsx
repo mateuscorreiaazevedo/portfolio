@@ -1,5 +1,5 @@
-import { MainPage } from '@/components'
 import { skillService } from '@/modules/skills'
+import { MainPage } from '@/components'
 import React from 'react'
 
 export default async function Home () {

@@ -27,7 +27,7 @@ class SkillService {
   }
 
   async getAllSkills (): Promise<Skill[] | undefined> {
-    const data = await prismaDb?.skill.findMany({ orderBy: { level: 'asc' } })
+    const data = await prismaDb?.skill.findMany({ orderBy: { level: 'desc' } })
 
     const skills = data?.map(item => ({
       ...item,

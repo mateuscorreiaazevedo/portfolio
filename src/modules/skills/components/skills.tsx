@@ -1,4 +1,10 @@
+'use client'
+
+import { motion } from 'framer-motion'
+import { Section } from '@/main/ui'
+import Image from 'next/image'
 import React from 'react'
+import { containerSlideUpTwo, itemSlideUp } from '@/main/animations'
 
 type Props = {
   skills?: Skill[]
@@ -6,12 +12,50 @@ type Props = {
 
 export default function Skills ({ skills }: Props) {
   return (
-    <div className="h-screen w-full flex items-center justify-center flex-col gap-2 overflow-x-hidden overflow-y-auto">
-      {skills?.map(skill => (
-        <div key={skill.id} className="w-full max-w-2xl h-80 bg-zinc-800/80 backdrop-blur rounded-lg">
-          {skill.title}
-        </div>
-      ))}
-    </div>
+    <Section>
+      <motion.div
+        initial="hidden"
+        animate="visible"
+        variants={containerSlideUpTwo}
+        className="w-full overflow-x-hidden max-w-3xl xl:max-w-4xl 2xl:max-w-screen-xl h-4/5 lg:aspect-square p-4 grid gap-4 grid-cols-1 overflow-y-auto scrollbar-none"
+      >
+        {skills?.map((skill, i) => (
+          <motion.div
+            key={skill.id}
+            variants={itemSlideUp}
+            className={`w-full h-40 flex gap-10 items-center justify-between rounded-2xl shadow border border-violet-500/60 bg-zinc-800/60 hover:bg-secondary transition-colors duration-300 backdrop-blur-sm p-4 ${
+              i % 2 !== 0 ? 'flex-row-reverse' : 'flex-row'
+            }`}
+          >
+            <Image alt="" src={skill.imageUrl} width={400} height={400} className="h-full w-fit rounded-lg" />
+            <div className="flex-1 flex flex-col">
+              <h3
+                className={`${
+                  i % 2 === 0 ? 'text-end' : 'text-start'
+                } font-medium text-3xl first-letter:text-primary uppercase`}
+              >
+                {skill.title}
+              </h3>
+              <div
+                className={`w-full flex items-center bg-zinc-700 h-10 ${
+                  i % 2 !== 0 ? 'rounded-r-full justify-start' : 'rounded-l-full justify-end'
+                }`}
+              >
+                <div
+                  style={{
+                    width: `${skill.level}%`
+                  }}
+                  className={`from-violet-500 via-violet-600 to-violet-700 flex items-center justify-center h-10 ${
+                    i % 2 !== 0 ? 'rounded-r-full bg-gradient-to-r' : 'rounded-l-full bg-gradient-to-l'
+                  }`}
+                >
+                  <p className="text-lg font-alt">{skill.level}%</p>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        ))}
+      </motion.div>
+    </Section>
   )
 }

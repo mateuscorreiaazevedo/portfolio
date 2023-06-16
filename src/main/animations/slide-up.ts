@@ -13,19 +13,32 @@ export const containerSlideUp: Variants = {
     }
   }
 }
+export const containerSlideUpTwo: Variants = {
+  hidden: {
+    opacity: 0
+  },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.5,
+      delayChildren: 1,
+      delay: 1.2
+    }
+  }
+}
 
 export const itemSlideUp: Variants = {
   hidden: {
-    y: 40,
+    y: '50%',
     opacity: 0
   },
   visible: {
     y: 0,
     opacity: 1,
     transition: {
-      type: 'spring',
-      bounce: 0.4,
-      duration: 1
+      type: 'just',
+      // bounce: 0.4,
+      // duration: 1
     }
   }
 }
