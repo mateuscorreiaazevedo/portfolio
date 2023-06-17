@@ -6,8 +6,9 @@ import { setNotification } from '@/modules/core'
 import { skillService } from '@/modules/skills'
 import { useRouter } from 'next/navigation'
 import React from 'react'
+import Link from 'next/link'
 
-export default function Skill () {
+export default function Skill() {
   const methods = useForm<SkillForm>()
   const router = useRouter()
 
@@ -16,7 +17,8 @@ export default function Skill () {
     reset,
     formState: { errors }
   } = methods
-  const allErrors: FieldError | undefined = errors.title || errors.imageUrl || errors.level
+  const allErrors: FieldError | undefined =
+    errors.title || errors.imageUrl || errors.level
 
   const createSkill: SubmitHandler<SkillForm> = async formSkill => {
     try {
@@ -31,7 +33,17 @@ export default function Skill () {
   return (
     <FormProvider {...methods}>
       <Section col animation="section-1">
-        <h1 className="text-4xl font-alt mb-10">Adicionar Skill</h1>
+        <div className="flex animate-section-2 mb-10 items-center justify-between w-full max-w-3xl">
+          <h1 className="text-4xl font-alt first-letter:text-primary">
+            Adicionar Skill
+          </h1>
+          <Link
+            href="/admin"
+            className="font-alt text-left bg-violet-500 hover:bg-violet-600 transition-all text-white px-4 py-2 rounded-full"
+          >
+            Ir para dashboard
+          </Link>
+        </div>
         <form
           onSubmit={handleSubmit(createSkill)}
           className="w-full max-w-2xl flex flex-col gap-2 items-center justify-center"
@@ -40,7 +52,13 @@ export default function Skill () {
             <Input field="title" placeholder="Título da skill" />
             <Input field="imageUrl" placeholder="Link da imagem" />
           </div>
-          <Input field="level" placeholder="Indique o seu nível de conhecimento" type="number" max={100} min={0} />
+          <Input
+            field="level"
+            placeholder="Indique o seu nível de conhecimento"
+            type="number"
+            max={100}
+            min={0}
+          />
           <PrimaryButton type="submit" errors={allErrors}>
             Adicionar
           </PrimaryButton>

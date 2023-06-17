@@ -1,15 +1,13 @@
 import { skillService } from '@/modules/skills'
 import { MainPage } from '@/components'
 import React from 'react'
+import { projectService } from '@/modules/projects'
 
 export default async function Home() {
-  let skills: Skill[] | undefined
+  const [skills, projects] = await Promise.all([
+    skillService.getAllSkills(),
+    projectService.getAllProjects()
+  ])
 
-  try {
-    skills = await skillService.getAllSkills()
-  } catch (error) {
-    console.error((error as any).message)
-  }
-
-  return <MainPage skills={skills} />
+  return <MainPage skills={skills} projects={projects} />
 }

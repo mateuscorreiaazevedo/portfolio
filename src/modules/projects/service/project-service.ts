@@ -3,12 +3,12 @@ import { service, tokenHelper } from '@/modules/core'
 
 const authToken = tokenHelper.get()
 
-class SkillService {
-  async createSkill(data: SkillForm) {
+class ProjectService {
+  async postProject(data: ProjectForm) {
     const response = await service.request<{ message: string; error?: string }>({
-      url: '/skills/new',
-      method: 'post',
+      url: '/projects/new',
       data,
+      method: 'post',
       headers: {
         Authorization: `Bearer ${authToken!}`
       }
@@ -26,16 +26,17 @@ class SkillService {
     }
   }
 
-  async getAllSkills(): Promise<Skill[] | undefined> {
-    const data = await prismaDb?.skill.findMany({ orderBy: { level: 'desc' } })
+  async getAllProjects(): Promise<Project[] | undefined> {
+    const data = await prismaDb?.project.findMany({ orderBy: { createdAt: 'asc' } })
 
-    const skills = data?.map(item => ({
+    const projects = data?.map(item => ({
       ...item,
+      imageUrl: item.imageUrl[0],
       createdAt: item.createdAt.toISOString()
-    })) as Skill[] | undefined
+    })) as Project[] | undefined
 
-    return skills
+    return projects
   }
 }
 
-export const skillService = new SkillService()
+export const projectService = new ProjectService()

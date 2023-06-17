@@ -40,7 +40,7 @@ model Project {
   title       String
   description String
   link        String
-  imageUrl    String[]
+  imageUrl    String
   createdAt   DateTime @default(now())
 
   User   User?   @relation(fields: [userId], references: [id])

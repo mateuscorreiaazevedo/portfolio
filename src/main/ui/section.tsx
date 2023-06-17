@@ -6,7 +6,7 @@ type Props = {
   animation?: 'section-1' | 'section-2' | 'section-3'
 }
 
-export default function Section ({ children, col, animation }: Props) {
+export default function Section({ children, col, animation }: Props) {
   let animate = ''
 
   switch (animation) {
@@ -24,7 +24,11 @@ export default function Section ({ children, col, animation }: Props) {
   }
 
   return (
-    <section className={`${col ? 'flex-col' : 'flex-row'} ${animate} container h-screen w-full flex items-center justify-center`}>
+    <section
+      className={`${
+        col ? 'flex-col' : 'flex-row'
+      } ${animate} container h-screen w-full flex items-center justify-center`}
+    >
       {children}
     </section>
   )

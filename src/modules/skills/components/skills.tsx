@@ -10,7 +10,7 @@ type Props = {
   skills?: Skill[]
 }
 
-export default function Skills ({ skills }: Props) {
+export default function Skills({ skills }: Props) {
   return (
     <Section>
       <motion.div
@@ -27,7 +27,13 @@ export default function Skills ({ skills }: Props) {
               i % 2 !== 0 ? 'flex-row-reverse' : 'flex-row'
             }`}
           >
-            <Image alt="" src={skill.imageUrl} width={400} height={400} className="h-full w-fit rounded-lg" />
+            <Image
+              alt=""
+              src={skill.imageUrl}
+              width={400}
+              height={400}
+              className="h-full w-fit rounded-lg"
+            />
             <div className="flex-1 flex flex-col">
               <h3
                 className={`${
@@ -38,7 +44,9 @@ export default function Skills ({ skills }: Props) {
               </h3>
               <div
                 className={`w-full flex items-center bg-zinc-700 h-10 ${
-                  i % 2 !== 0 ? 'rounded-r-full justify-start' : 'rounded-l-full justify-end'
+                  i % 2 !== 0
+                    ? 'rounded-r-full justify-start'
+                    : 'rounded-l-full justify-end'
                 }`}
               >
                 <div
@@ -46,7 +54,9 @@ export default function Skills ({ skills }: Props) {
                     width: `${skill.level}%`
                   }}
                   className={`from-violet-500 via-violet-600 to-violet-700 flex items-center justify-center h-10 ${
-                    i % 2 !== 0 ? 'rounded-r-full bg-gradient-to-r' : 'rounded-l-full bg-gradient-to-l'
+                    i % 2 !== 0
+                      ? 'rounded-r-full bg-gradient-to-r'
+                      : 'rounded-l-full bg-gradient-to-l'
                   }`}
                 >
                   <p className="text-lg font-alt">{skill.level}%</p>
