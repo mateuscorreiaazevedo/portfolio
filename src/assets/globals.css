@@ -46,3 +46,12 @@ body {
 .animate-time-4000 {
   animation-duration: 4000ms;
 }
+.animate-time-2000 {
+  animation-duration: 2000ms;
+}
+.animate-time-700 {
+  animation-duration: 700ms;
+}
+.animate-time-1000 {
+  animation-duration: 1000ms;
+}

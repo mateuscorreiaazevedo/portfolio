@@ -1,3 +1,4 @@
+import ball from './small-ball.svg'
 import circle from './circle.svg'
 import border from './border.svg'
 import orbit from './orbit.svg'
@@ -9,5 +10,6 @@ export const images = {
   border,
   orbit,
   myPhoto,
-  brand
+  brand,
+  ball
 }

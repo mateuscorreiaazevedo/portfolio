@@ -8,7 +8,11 @@ export default function Home() {
       <div className="flex w-full flex-col items-center justify-center gap-4 md:gap-1 lg:items-start">
         <h1 className="font-alt text-5xl sm:text-7xl">Hello.</h1>
         <h2>
-          Meu nome é <span className="font-bold text-primary">Mateus Azevedo</span>.
+          Meu nome é{' '}
+          <span className="font-bold text-violet-600 lg:text-primary">
+            Mateus Azevedo
+          </span>
+          .
         </h2>
         <p className="w-80 text-justify sm:w-72 sm:text-sm md:w-80 md:text-base">
           Desenvolvedor{' '}
