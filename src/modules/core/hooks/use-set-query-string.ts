@@ -9,6 +9,7 @@ export const useSetQueryString = (key: string, value: string) => {
     params.set(key, value)
 
     return params.toString()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [params])
 
   return setQueryString()

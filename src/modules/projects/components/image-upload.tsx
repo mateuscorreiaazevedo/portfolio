@@ -22,7 +22,7 @@ export const ImageUpload: FC<Props> = ({ field }) => {
     (result: any) => {
       setValue(field, result.info.secure_url)
     },
-    [setValue]
+    [field, setValue]
   )
   return (
     <CldUploadWidget
