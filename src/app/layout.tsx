@@ -1,5 +1,5 @@
 import { Roboto_Flex as Roboto, Bai_Jamjuree as BaiJamjuree } from 'next/font/google'
-import '../assets/styles/globals.css'
+import '../assets/globals.css'
 import { Header, OrbitalSphere, Sidebar } from '@/components'
 import { Toaster } from 'react-hot-toast'
 import { cookies } from 'next/headers'
@@ -31,10 +31,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         className={`
           ${roboto.variable}
           ${baijamjuree.variable}
-          font-main
-          w-full
           min-h-screen
-          bg-zinc-900
+          w-full
+          bg-zinc-950 bg-[url(../assets/images/bg-stars.svg)]
+          bg-cover
+          font-main
           text-white
           scrollbar-none
         `}
@@ -43,7 +44,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         {isAuth && <SignOutButton />}
         <main className="flex items-center">
           <OrbitalSphere />
-          <article className="flex-1 snap-start snap-mandatory">{children}</article>
+          <article className="flex-1 snap-mandatory snap-start">{children}</article>
           <Sidebar />
         </main>
         <Toaster

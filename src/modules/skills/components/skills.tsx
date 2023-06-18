@@ -17,13 +17,13 @@ export default function Skills({ skills }: Props) {
         initial="hidden"
         animate="visible"
         variants={containerSlideUpTwo}
-        className="w-full overflow-x-hidden max-w-3xl xl:max-w-4xl 2xl:max-w-screen-xl h-full lg:aspect-square p-4 grid gap-4 grid-cols-1 overflow-y-auto pt-20 lg:pt-2 scrollbar-none"
+        className="grid h-full w-full max-w-3xl grid-cols-1 gap-4 overflow-y-auto overflow-x-hidden p-4 pt-20 scrollbar-none lg:aspect-square lg:py-px xl:max-w-4xl 2xl:max-w-screen-xl"
       >
         {skills?.map((skill, i) => (
           <motion.div
             key={skill.id}
             variants={itemSlideUp}
-            className={`w-full h-40 flex gap-10 items-center justify-between rounded-2xl shadow border border-violet-500/60 bg-zinc-800/60 hover:bg-secondary transition-colors duration-300 backdrop-blur-sm p-4 ${
+            className={`flex h-40 w-full items-center justify-between gap-10 bg-zinc-900/60 p-4 shadow transition-colors duration-300 hover:bg-secondary hover:backdrop-blur-sm ${
               i % 2 !== 0 ? 'flex-row-reverse' : 'flex-row'
             }`}
           >
@@ -32,34 +32,34 @@ export default function Skills({ skills }: Props) {
               src={skill.imageUrl}
               width={400}
               height={400}
-              className="sm:h-full w-20 sm:w-fit rounded-lg"
+              className="w-20 sm:h-full sm:w-fit"
             />
-            <div className="flex-1 flex flex-col">
+            <div className="flex flex-1 flex-col">
               <h3
                 className={`${
                   i % 2 === 0 ? 'text-end' : 'text-start'
-                } md:font-medium md:text-3xl font-bold first-letter:text-primary uppercase`}
+                } font-bold uppercase first-letter:text-primary md:text-3xl md:font-medium`}
               >
                 {skill.title}
               </h3>
               <div
-                className={`w-full flex items-center bg-zinc-700 h-10 ${
+                className={`flex h-10 w-full items-center bg-zinc-700 ${
                   i % 2 !== 0
-                    ? 'rounded-r-full justify-start'
-                    : 'rounded-l-full justify-end'
+                    ? 'justify-start rounded-r-full'
+                    : 'justify-end rounded-l-full'
                 }`}
               >
                 <div
                   style={{
                     width: `${skill.level}%`
                   }}
-                  className={`from-violet-500 via-violet-600 to-violet-700 flex items-center justify-center h-10 ${
+                  className={`flex h-10 items-center justify-center from-violet-500 via-violet-600 to-violet-700 ${
                     i % 2 !== 0
                       ? 'rounded-r-full bg-gradient-to-r'
                       : 'rounded-l-full bg-gradient-to-l'
                   }`}
                 >
-                  <p className="text-lg font-alt">{skill.level}%</p>
+                  <p className="font-alt text-lg">{skill.level}%</p>
                 </div>
               </div>
             </div>

@@ -11,4 +11,5 @@ interface Project {
   link: string
   imageUrl: string
   createdAt: string
+  id: string
 }

@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
 @keyframes section1 {
   from {
     transform: translateX(-50%);
@@ -21,9 +26,9 @@
 }
 
 @keyframes section3 {
-  from {
+  0%, 50% {
     transform: translateY(100%);
-  } to {
+  } 100% {
     transform: translateY(0);
   }
 }
@@ -35,8 +40,7 @@
   animation: scale 1.5s ease;
 }
 .animate-section-3 {
-  animation-delay: 4000ms;
-  animation: section3 1.5s ease;
+  animation: section3 4s ease;
 }
 
 .animate-time-4000 {
