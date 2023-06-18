@@ -32,6 +32,15 @@ body {
     transform: translateY(0);
   }
 }
+@keyframes section4 {
+  0%, 50% {
+    transform: translateY(-100%);
+    opacity: 0;
+  } 100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
 
 .animate-section-1 {
   animation: section1 1.5s ease;
@@ -41,6 +50,9 @@ body {
 }
 .animate-section-3 {
   animation: section3 4s ease;
+}
+.animate-section-4 {
+  animation: section4 4s ease;
 }
 
 .animate-time-4000 {

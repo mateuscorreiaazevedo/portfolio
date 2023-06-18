@@ -1,10 +1,8 @@
 'use client'
 
-import { motion } from 'framer-motion'
 import { Section } from '@/main/ui'
 import Image from 'next/image'
 import React from 'react'
-import { containerSlideUpTwo, itemSlideUp } from '@/main/animations'
 
 type Props = {
   skills?: Skill[]
@@ -13,16 +11,10 @@ type Props = {
 export default function Skills({ skills }: Props) {
   return (
     <Section>
-      <motion.div
-        initial="hidden"
-        animate="visible"
-        variants={containerSlideUpTwo}
-        className="grid h-full w-full max-w-3xl grid-cols-1 gap-4 overflow-y-auto overflow-x-hidden p-4 pt-20 scrollbar-none lg:aspect-square lg:py-px xl:max-w-4xl 2xl:max-w-screen-xl"
-      >
+      <div className="grid h-full w-full max-w-3xl animate-section-3 grid-cols-1 gap-4 overflow-y-auto overflow-x-hidden p-4 pt-20 scrollbar-none lg:aspect-square lg:py-px xl:max-w-4xl xl:grid-cols-2 2xl:max-w-screen-xl">
         {skills?.map((skill, i) => (
-          <motion.div
+          <div
             key={skill.id}
-            variants={itemSlideUp}
             className={`flex h-40 w-full items-center justify-between gap-10 bg-zinc-900/60 p-4 shadow transition-colors duration-300 hover:bg-secondary hover:backdrop-blur-sm ${
               i % 2 !== 0 ? 'flex-row-reverse' : 'flex-row'
             }`}
@@ -63,9 +55,9 @@ export default function Skills({ skills }: Props) {
                 </div>
               </div>
             </div>
-          </motion.div>
+          </div>
         ))}
-      </motion.div>
+      </div>
     </Section>
   )
 }

@@ -24,8 +24,7 @@ module.exports = {
         'section-1': 'animate-section-1',
         'section-2': 'animate-section-2',
         'section-3': 'animate-section-3',
-        'hidden-1': 'animate-hidden-1',
-        scale: 'animate-scale'
+        'section-4': 'animate-section-4'
       },
       transitionDuration: {
         2000: '2000ms'
