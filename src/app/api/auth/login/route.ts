@@ -3,7 +3,7 @@ import { prismaDb } from '@/main/config'
 import { compare } from 'bcrypt'
 import jwt from 'jsonwebtoken'
 
-export async function POST (req: Request) {
+export async function POST(req: Request) {
   const body = await req.json()
 
   const { email, password } = body
@@ -37,7 +37,7 @@ export async function POST (req: Request) {
 
   return NextResponse.json(
     {
-      message: 'Usuário logado com sucesso!',
+      message: 'Usuário logado com sucesso!'
     },
     {
       headers: {

@@ -16,13 +16,13 @@ type HttpResponse<T = any> = {
 class Service {
   private api: AxiosInstance
 
-  constructor (private baseURL = env.baseURL) {
+  constructor(private baseURL = env.baseURL) {
     this.api = axios.create({
       baseURL: this.baseURL
     })
   }
 
-  async request<T = any> (props: HttpRequest): Promise<HttpResponse<T>> {
+  async request<T = any>(props: HttpRequest): Promise<HttpResponse<T>> {
     const { url, data, headers, method = 'get', params } = props
     let response: AxiosResponse
 

@@ -1,14 +1,14 @@
 import { service } from '@/modules/core'
 
 class AuthService {
-  async login (data: Login) {
-    const response = await service.request<{message: string, error?: string}>({
+  async login(data: Login) {
+    const response = await service.request<{ message: string; error?: string }>({
       url: '/auth/login',
       method: 'post',
       data,
       headers: {
         Accept: 'application/json',
-        'Content-Type': 'application/json',
+        'Content-Type': 'application/json'
       }
     })
 

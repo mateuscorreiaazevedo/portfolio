@@ -32,8 +32,16 @@ export const FormContact = () => {
       reply_to: formData.subject
     }
     try {
-      await emailjs.send(env.serviceId, env.templateId, templateParams, env.emailjsPublicKey)
-      setNotification('Sua mensagem foi enviada com sucesso! Por favor, aguarde o nosso retorno.', 'success')
+      await emailjs.send(
+        env.serviceId,
+        env.templateId,
+        templateParams,
+        env.emailjsPublicKey
+      )
+      setNotification(
+        'Sua mensagem foi enviada com sucesso! Por favor, aguarde o nosso retorno.',
+        'success'
+      )
       methods.reset()
       router.push('/')
     } catch (error) {

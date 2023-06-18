@@ -21,7 +21,7 @@ export const Item = (props: Props) => {
     }
   })
 
-  function handleSetTab () {
+  function handleSetTab() {
     if (props.value === null) {
       push('/')
       setActiveTab(null)
@@ -44,7 +44,9 @@ export const Item = (props: Props) => {
       disabled={activeTab === props.value}
       onClick={handleSetTab}
       className={`transition-colors md:py-2 duration-200 font-alt uppercase leading-tight py-1 ${
-        activeTab === props.value ? 'text-violet-500 border-b-2 border-violet-500' : ''
+        activeTab === props.value
+          ? 'text-violet-500 border-b-2 border-violet-500'
+          : ''
       }`}
     >
       {props.label}

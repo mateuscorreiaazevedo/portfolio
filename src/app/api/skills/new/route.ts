@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from 'next/server'
 import { prismaDb } from '@/main/config'
 import decode from 'jwt-decode'
 
-export async function POST (req: NextRequest) {
+export async function POST(req: NextRequest) {
   const isAuth = req.headers.get('Authorization')
   const token = req.cookies.get('auth_token')?.value
 
@@ -24,8 +24,14 @@ export async function POST (req: NextRequest) {
   })
 
   if (!newSkill) {
-    return NextResponse.json({ error: 'A nova skill não pôde ser adicionada.' }, { status: 422 })
+    return NextResponse.json(
+      { error: 'A nova skill não pôde ser adicionada.' },
+      { status: 422 }
+    )
   }
 
-  return NextResponse.json({ message: 'Skill adicionada com sucesso.' }, { status: 201 })
+  return NextResponse.json(
+    { message: 'Skill adicionada com sucesso.' },
+    { status: 201 }
+  )
 }

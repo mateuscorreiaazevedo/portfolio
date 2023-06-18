@@ -7,7 +7,7 @@ if (typeof window === 'undefined') {
     prisma = new PrismaClient()
   } else {
     const globalWithPrisma = global as typeof globalThis & {
-      prisma: PrismaClient;
+      prisma: PrismaClient
     }
     if (!globalWithPrisma.prisma) {
       globalWithPrisma.prisma = new PrismaClient()

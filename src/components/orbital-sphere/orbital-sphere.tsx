@@ -4,7 +4,7 @@ import { useSearchParams } from 'next/navigation'
 import { images } from '@/assets/images'
 import Image from 'next/image'
 
-export default function OrbitalSphere () {
+export default function OrbitalSphere() {
   const params = useSearchParams()
   const tab = params?.get('tab')
   let style = ''
@@ -55,7 +55,7 @@ export default function OrbitalSphere () {
           -top-1
         "
       />
-      <Image src={images.circle} alt="circle" className='w-full aspect-square' />
+      <Image src={images.circle} alt="circle" className="w-full aspect-square" />
     </div>
   )
 }

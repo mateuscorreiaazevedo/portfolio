@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 
-export default function middleware (req: NextRequest) {
+export default function middleware(req: NextRequest) {
   const token = req.cookies.has('auth_token')
 
   if (!token) {

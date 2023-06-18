@@ -36,7 +36,7 @@ export const itemSlideUp: Variants = {
     y: 0,
     opacity: 1,
     transition: {
-      type: 'just',
+      type: 'just'
       // bounce: 0.4,
       // duration: 1
     }

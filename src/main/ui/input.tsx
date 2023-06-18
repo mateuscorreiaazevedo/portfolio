@@ -7,7 +7,10 @@ type Props = React.InputHTMLAttributes<HTMLInputElement> & {
 }
 
 export const Input: React.FC<Props> = ({ field, placeholder, ...rest }) => {
-  const { register, formState: { errors } } = useFormContext()
+  const {
+    register,
+    formState: { errors }
+  } = useFormContext()
 
   return (
     <input
