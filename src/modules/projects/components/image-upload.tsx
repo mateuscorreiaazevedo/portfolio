@@ -2,6 +2,7 @@
 
 import { CldUploadWidget } from 'next-cloudinary'
 import { useFormContext } from 'react-hook-form'
+import { BiImageAdd } from 'react-icons/bi'
 import { FC, useCallback } from 'react'
 import Image from 'next/image'
 
@@ -35,7 +36,7 @@ export const ImageUpload: FC<Props> = ({ field }) => {
         return (
           <div
             onClick={() => open()}
-            className={`relative transition-all px-4 py-2 w-full aspect-video cursor-pointer bg-zinc-800 border hover:border-b-primary ${
+            className={`relative transition-all flex items-center justify-center px-4 py-2 w-full aspect-video cursor-pointer bg-zinc-800 border hover:border-b-primary ${
               errors.imageUrl ? 'border-red-500' : 'border-transparent'
             }`}
           >
@@ -49,7 +50,8 @@ export const ImageUpload: FC<Props> = ({ field }) => {
                 />
               </div>
             ) : (
-              <span className="text-lg text-zinc-300">
+              <span className="text-lg text-zinc-300 flex flex-col justify-center items-center hover:text-zinc-400 transition">
+                <BiImageAdd className="w-10 h-10" />
                 Clique aqui para inserir uma foto.
               </span>
             )}

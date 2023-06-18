@@ -1,5 +1,7 @@
 'use client'
 
+import { Section } from '@/main/ui'
+
 type Props = {
   projects?: Project[]
 }
@@ -7,5 +9,5 @@ type Props = {
 export default function Projects({ projects }: Props) {
   console.log(projects)
 
-  return <div>Projects</div>
+  return <Section>Projects</Section>
 }
