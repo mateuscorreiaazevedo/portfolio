@@ -1,6 +1,6 @@
 import { Roboto_Flex as Roboto, Bai_Jamjuree as BaiJamjuree } from 'next/font/google'
 import '../assets/styles/globals.css'
-import { Footer, Header, OrbitalSphere, Sidebar } from '@/components'
+import { Header, OrbitalSphere, Sidebar } from '@/components'
 import { Toaster } from 'react-hot-toast'
 import { cookies } from 'next/headers'
 import { SignOutButton } from '@/modules/auth'
@@ -22,7 +22,7 @@ export const metadata = {
   description: 'My portfólio with Next.js 13 powered by: @mateuscorreiaazevedo'
 }
 
-export default function RootLayout ({ children }: { children: React.ReactNode }) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   const isAuth = cookies().has('auth_token')
 
   return (
@@ -46,12 +46,13 @@ export default function RootLayout ({ children }: { children: React.ReactNode })
           <article className="flex-1 snap-start snap-mandatory">{children}</article>
           <Sidebar />
         </main>
-        <Footer />
-        <Toaster toastOptions={{
-          position: 'top-center',
-          className: 'px-4 py-2 font-alt text-sm',
-          duration: 3000
-        }} />
+        <Toaster
+          toastOptions={{
+            position: 'top-center',
+            className: 'px-4 py-2 font-alt text-sm',
+            duration: 3000
+          }}
+        />
       </body>
     </html>
   )

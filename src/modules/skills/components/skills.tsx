@@ -17,7 +17,7 @@ export default function Skills({ skills }: Props) {
         initial="hidden"
         animate="visible"
         variants={containerSlideUpTwo}
-        className="w-full overflow-x-hidden max-w-3xl xl:max-w-4xl 2xl:max-w-screen-xl h-4/5 lg:aspect-square p-4 grid gap-4 grid-cols-1 overflow-y-auto scrollbar-none"
+        className="w-full overflow-x-hidden max-w-3xl xl:max-w-4xl 2xl:max-w-screen-xl h-full lg:aspect-square p-4 grid gap-4 grid-cols-1 overflow-y-auto pt-20 lg:pt-2 scrollbar-none"
       >
         {skills?.map((skill, i) => (
           <motion.div
@@ -32,13 +32,13 @@ export default function Skills({ skills }: Props) {
               src={skill.imageUrl}
               width={400}
               height={400}
-              className="h-full w-fit rounded-lg"
+              className="sm:h-full w-20 sm:w-fit rounded-lg"
             />
             <div className="flex-1 flex flex-col">
               <h3
                 className={`${
                   i % 2 === 0 ? 'text-end' : 'text-start'
-                } font-medium text-3xl first-letter:text-primary uppercase`}
+                } md:font-medium md:text-3xl font-bold first-letter:text-primary uppercase`}
               >
                 {skill.title}
               </h3>
