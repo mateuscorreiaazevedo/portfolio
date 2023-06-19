@@ -27,7 +27,7 @@ export default function Section({ children, col, animation }: Props) {
     <section
       className={`${
         col ? 'flex-col' : 'flex-row'
-      } ${animate} container h-screen w-full flex items-center justify-center`}
+      } ${animate} container flex h-screen w-full items-center justify-center`}
     >
       {children}
     </section>

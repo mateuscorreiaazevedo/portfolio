@@ -42,9 +42,9 @@ export const NewProjectForm = () => {
     <FormProvider {...methods}>
       <form
         onSubmit={handleSubmit(handlePostProject)}
-        className="flex flex-col gap-2 items-center justify-center w-full max-w-2xl"
+        className="flex w-full max-w-2xl flex-col items-center justify-center gap-2"
       >
-        <div className="w-full flex items-center gap-2 justify-between">
+        <div className="flex w-full items-center justify-between gap-2">
           <Input field="title" placeholder="Título do projeto" />
           <Input field="link" placeholder="Link do projeto" />
         </div>

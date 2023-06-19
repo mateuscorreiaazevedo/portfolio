@@ -43,9 +43,9 @@ export const Item = (props: Props) => {
     <button
       disabled={activeTab === props.value}
       onClick={handleSetTab}
-      className={`transition-colors md:py-2 duration-200 font-alt uppercase leading-tight py-1 ${
+      className={`py-1 font-alt uppercase leading-tight transition-colors duration-200 md:py-2 ${
         activeTab === props.value
-          ? 'text-violet-500 border-b-2 border-violet-500'
+          ? 'border-b-2 border-violet-500 text-violet-500'
           : ''
       }`}
     >

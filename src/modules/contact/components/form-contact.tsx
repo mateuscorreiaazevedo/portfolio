@@ -58,9 +58,9 @@ export const FormContact = () => {
         animate="visible"
         variants={containerSlideUp}
         onSubmit={methods.handleSubmit(onSubmit)}
-        className="flex-1 flex flex-col gap-2"
+        className="flex flex-1 flex-col gap-2"
       >
-        <div className="flex flex-col lg:flex-row gap-2 w-full text-sm">
+        <div className="flex w-full flex-col gap-2 text-sm lg:flex-row">
           <motion.div variants={itemSlideUp}>
             <Input field="name" placeholder="Name" />
           </motion.div>

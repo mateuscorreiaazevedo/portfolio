@@ -16,7 +16,7 @@ export const Input: React.FC<Props> = ({ field, placeholder, ...rest }) => {
     <input
       {...rest}
       {...register(field, { required: true })}
-      className={`outline-none border w-full focus:border-b-violet-500 transition-colors hover:border-b-primary bg-zinc-800 py-2 px-4 placeholder:text-zinc-300 font-light ${
+      className={`w-full border bg-zinc-800 px-4 py-2 font-light outline-none transition-colors placeholder:text-zinc-300 hover:border-b-primary focus:border-b-violet-500 ${
         errors[field] ? 'border-red-500' : 'border-transparent'
       }`}
       placeholder={placeholder}

@@ -9,10 +9,10 @@ type Props = React.ButtonHTMLAttributes<HTMLButtonElement> & {
 export const PrimaryButton: React.FC<Props> = ({ children, errors, ...rest }) => {
   return (
     <button
-      className={`font-alt transition-colors  uppercase text-xl rounded-sm w-full py-2 px-4 ${
+      className={`w-full rounded-sm  px-4 py-2 font-alt text-xl uppercase transition-colors ${
         errors
-          ? 'bg-red-500 hover:bg-red-600 text-white'
-          : 'bg-violet-500 hover:bg-violet-600 text-black'
+          ? 'bg-red-500 text-white hover:bg-red-600'
+          : 'bg-violet-500 text-black hover:bg-violet-600'
       }`}
       {...rest}
     >

@@ -24,38 +24,38 @@ export default function OrbitalSphere() {
         animate-scale
         fixed
         -z-10
-        transition-all
-        duration-2000
-        p-12
-        md:p-24
-        w-full
-        md:w-fit
-        aspect-square
-        rounded-full
         flex
+        aspect-square
+        w-full
         items-center
         justify-center
-        border-t
+        rounded-full
+        border-b
         border-l-0
         border-r-[3px]
-        border-b
+        border-t
         border-zinc-200
+        p-12
+        transition-all
+        duration-2000
+        md:w-fit
+        md:p-24
         `}
     >
       <div
         className="
+          animate-time-4000
           absolute
           inset-0
+          -top-1
+          animate-spin
           rounded-full
           border-4
           border-transparent
           border-t-zinc-300/70
-          animate-spin
-          animate-time-4000
-          -top-1
         "
       />
-      <Image src={images.circle} alt="circle" className="w-full aspect-square" />
+      <Image src={images.circle} alt="circle" className="aspect-square w-full" />
     </div>
   )
 }

@@ -38,9 +38,9 @@ const NewSkillForm = () => {
     <FormProvider {...methods}>
       <form
         onSubmit={handleSubmit(createSkill)}
-        className="w-full max-w-2xl flex flex-col gap-2 items-center justify-center"
+        className="flex w-full max-w-2xl flex-col items-center justify-center gap-2"
       >
-        <div className="w-full flex justify-center items-center gap-2">
+        <div className="flex w-full items-center justify-center gap-2">
           <Input field="title" placeholder="Título da skill" />
           <Input field="imageUrl" placeholder="Link da imagem" />
         </div>

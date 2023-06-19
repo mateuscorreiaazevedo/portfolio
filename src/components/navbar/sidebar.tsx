@@ -23,8 +23,8 @@ const navbar = [
 
 export default function Sidebar() {
   return (
-    <aside className="hidden lg:flex flex-col justify-between items-center p-4 fixed top-0 right-0 bottom-0 w-40 xl:w-60 z-10">
-      <nav className="flex-1 flex flex-col justify-center items-center gap-2">
+    <aside className="fixed bottom-0 right-0 top-0 z-10 hidden w-40 flex-col items-center justify-between p-4 lg:flex xl:w-60">
+      <nav className="flex flex-1 flex-col items-center justify-center gap-2">
         {navbar.map(item => (
           <Item {...item} key={item.label} />
         ))}
@@ -35,7 +35,7 @@ export default function Sidebar() {
           <Image
             src={images.brand}
             alt="Mateus Azevedo"
-            className="w-8 aspect-square"
+            className="aspect-square w-8"
             title="Mateus Azevedo &copy; - 2023"
           />
         </a>

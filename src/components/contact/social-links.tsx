@@ -42,7 +42,7 @@ export default function SociaLinks() {
           href={item.link}
           key={item.link}
           target="_blank"
-          className="flex gap-4 h-10 items-center justify-between px-8 lg:h-fit lg:px-4 lg:py-2 bg-zinc-800 hover:bg-secondary transition-all text-2xl font-light hover:text-primary"
+          className="flex h-10 items-center justify-between gap-4 bg-zinc-800 px-8 text-2xl font-light transition-all hover:bg-secondary hover:text-primary lg:h-fit lg:px-4 lg:py-2"
           rel="noreferrer"
         >
           <item.icon className="fill-white" />
