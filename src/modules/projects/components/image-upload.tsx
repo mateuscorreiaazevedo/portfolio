@@ -36,22 +36,22 @@ export const ImageUpload: FC<Props> = ({ field }) => {
         return (
           <div
             onClick={() => open()}
-            className={`relative transition-all flex items-center justify-center px-4 py-2 w-full aspect-video cursor-pointer bg-zinc-800 border hover:border-b-primary ${
+            className={`relative flex aspect-video w-full cursor-pointer items-center justify-center border bg-zinc-800 px-4 py-2 transition-all hover:border-b-primary ${
               errors.imageUrl ? 'border-red-500' : 'border-transparent'
             }`}
           >
             {value ? (
-              <div className="absolute inset-0 w-full h-full">
+              <div className="absolute inset-0 h-full w-full">
                 <Image
                   alt="Upload"
                   fill
-                  className="w-full aspect-auto object-cover"
+                  className="aspect-auto w-full object-cover"
                   src={value}
                 />
               </div>
             ) : (
-              <span className="text-lg text-zinc-300 flex flex-col justify-center items-center hover:text-zinc-400 transition">
-                <BiImageAdd className="w-10 h-10" />
+              <span className="flex flex-col items-center justify-center text-lg text-zinc-300 transition hover:text-zinc-400">
+                <BiImageAdd className="h-10 w-10" />
                 Clique aqui para inserir uma foto.
               </span>
             )}
