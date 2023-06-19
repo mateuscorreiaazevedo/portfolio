@@ -18,8 +18,8 @@ const nav = [
 
 export default function Admin() {
   return (
-    <section className="animate-section-2 container w-full h-screen flex items-center justify-center flex-col">
-      <h1 className="font-bold text-3xl first-letter:font-alt">
+    <section className="container flex h-screen w-full animate-section-2 flex-col items-center justify-center">
+      <h1 className="text-3xl font-bold first-letter:font-alt">
         Painel de Administrador
       </h1>
       <nav className="mt-10 flex items-center justify-between gap-2">
@@ -27,7 +27,7 @@ export default function Admin() {
           <Link
             key={item.label}
             href={item.link}
-            className="bg-zinc-800 px-2 py-1 font-alt text-lg hover:-translate-y-2 transition-all rounded hover:bg-violet-500"
+            className="rounded bg-zinc-800 px-2 py-1 font-alt text-lg transition-all hover:-translate-y-2 hover:bg-violet-500"
           >
             {item.label}
           </Link>
