@@ -11,7 +11,7 @@ type Props = {
 export default function Skills({ skills }: Props) {
   return (
     <Section>
-      <div className="grid h-full w-full max-w-3xl animate-section-3 grid-cols-1 gap-4 overflow-y-auto overflow-x-hidden p-4 pt-20 scrollbar-none lg:aspect-square lg:py-px xl:max-w-4xl xl:grid-cols-2 2xl:max-w-screen-xl">
+      <div className="grid h-full w-full max-w-3xl animate-section-3 grid-cols-1 gap-4 overflow-y-auto overflow-x-hidden p-4 pt-20 scrollbar-none lg:aspect-square lg:py-px xl:max-w-4xl 2xl:max-w-screen-xl">
         {skills?.map((skill, i) => (
           <div
             key={skill.id}
